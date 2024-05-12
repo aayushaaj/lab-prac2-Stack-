@@ -6,29 +6,53 @@ LinkedListStack::LinkedListStack(){}
 LinkedListStack::~LinkedListStack(){}
 
 void LinkedListStack::push(int item)
-{
-    list.addToHead(item);
-}
-int LinkedListStack::pop()
-{
-    if(this->isEmpty())
     {
-        std::cout<<"Stack is Empty"<<std::endl;
-        return NULL;
+        list.addToHead(item);
     }
-    else{
-    
-        list.removeFromHead();
+
+int LinkedListStack::pop()
+    {
+        if(this->isEmpty())
+        {
+            std::cout<<"Stack is Empty"<<std::endl;
+            return NULL;
+        }
+        else{
+        
+            list.removeFromHead();
+        }
     }
-}
+
 int LinkedListStack::top()
-{
-    if(this->isEmpty())
-     {
-        std::cout<<"Stack is Empty"<<std::endl;
-        return NULL;
+    {
+        if(this->isEmpty())
+        {
+            std::cout<<"Stack is Empty"<<std::endl;
+            return NULL;
+        }
+        else{
+            int topelement = list.removeFromHead();
+            list.addToHead(topelement);
+            return topelement;
+
+        }
     }
-    else{
-        return ;
+
+int LinkedListStack::pop()
+    {
+        if(this->isEmpty())
+        {
+            std::cout<<"Stack is Empty"<<std::endl;
+        }
+        else
+        {
+            int popElement=list.removeFromHead();
+            return popElement;
+            
+        }
     }
-}
+
+void LinkedListStack::printStack()
+    {
+        list.print();
+    }
