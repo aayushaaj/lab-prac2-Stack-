@@ -3,7 +3,7 @@
 #include <iostream>
 
 LinkedListStack::LinkedListStack(){}
-LinkedListStack::~LinkedListStack(){}
+LinkedListStack::~LinkedListStack(){} 
 
 void LinkedListStack::push(int item)
     {
@@ -15,11 +15,12 @@ int LinkedListStack::pop()
         if(this->isEmpty())
         {
             std::cout<<"Stack is Empty"<<std::endl;
-            return NULL;
+            return -1;
         }
         else{
         
-            list.removeFromHead();
+            int popElement=list.removeFromHead();
+            return popElement;;
         }
     }
 
@@ -28,7 +29,7 @@ int LinkedListStack::top()
         if(this->isEmpty())
         {
             std::cout<<"Stack is Empty"<<std::endl;
-            return NULL;
+            return -1;
         }
         else{
             int topelement = list.removeFromHead();
@@ -38,18 +39,9 @@ int LinkedListStack::top()
         }
     }
 
-int LinkedListStack::pop()
+bool LinkedListStack::isEmpty()
     {
-        if(this->isEmpty())
-        {
-            std::cout<<"Stack is Empty"<<std::endl;
-        }
-        else
-        {
-            int popElement=list.removeFromHead();
-            return popElement;
-            
-        }
+        return list.isEmpty();
     }
 
 void LinkedListStack::printStack()
