@@ -5,7 +5,7 @@
 class LinkedListStack: public Stack
 {
 public:
-    LinkedListStack();
+    LinkedListStack(){}
     ~LinkedListStack();
 
     void push(int item);
