@@ -1,5 +1,3 @@
-#include <iostream>
-#include "../include/stack.h"
 #include "../include/ArrayStack.h"
 #include <iostream>
 
