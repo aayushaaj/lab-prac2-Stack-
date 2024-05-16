@@ -2,12 +2,13 @@
 #include "../include/LinkedListStack.h"
 #include <iostream>
 
-LinkedListStack::LinkedListStack(){}
+//LinkedListStack::LinkedListStack(){}
 LinkedListStack::~LinkedListStack(){} 
 
 void LinkedListStack::push(int item)
     {
         list.addToHead(item);
+        topElement=item;
     }
 
 int LinkedListStack::pop()
@@ -17,12 +18,21 @@ int LinkedListStack::pop()
             std::cout<<"Stack is Empty"<<std::endl;
             return -1;
         }
-        else{
-        
-            int popElement=list.removeFromHead();
-            return popElement;;
-        }
+        else
+        {
+       
+        int poppedElement = topElement;
+        bool removed = list.removeFromHead();
+        if(removed)
+        {
+            topElement = list.isEmpty() ? -1 : list.getHead();
+        } 
+        return removed ? poppedElement : -1;
     }
+        }
+
+            
+    
 
 int LinkedListStack::top()
     {
@@ -32,10 +42,7 @@ int LinkedListStack::top()
             return -1;
         }
         else{
-            int topelement = list.removeFromHead();
-            list.addToHead(topelement);
-            return topelement;
-
+            return topElement;
         }
     }
 
