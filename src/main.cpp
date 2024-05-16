@@ -1,6 +1,6 @@
 #include <iostream>
 #include "../include/LinkedListStack.h"
-//#include "../include/stack.h"
+//#include "../include/Stack.h"
 
 int main()
 {
@@ -16,6 +16,7 @@ int main()
 
     Stack.push(1);
     Stack.push(2);
+    Stack.push(3);
     
     if(Stack.isEmpty())
         {
@@ -29,9 +30,8 @@ int main()
     Stack.printStack();
 
     std::cout<<"top element is:"<< Stack.top()<<std::endl;
-
-    Stack.pop();
-
+    std::cout<<"popped element is:"<< Stack.pop()<<std::endl;
     std::cout<<"top element is:"<< Stack.top()<<std::endl;
+
 
 }
