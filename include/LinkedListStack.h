@@ -1,5 +1,5 @@
 #pragma once
-#include "stack.h"
+#include "Stack.h"
 #include "../../lab-prac/include/linkedlist.h"
 
 class LinkedListStack: public Stack
@@ -17,4 +17,5 @@ public:
     
  private :
     linkedlist list;
+    int topElement;
 };
