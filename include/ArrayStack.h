@@ -9,6 +9,7 @@ class ArrayStack:public Stack
         void push(int item);
         int pop();
         int top();
+        bool isFull();
         bool isEmpty();
         void printStack();
 };
