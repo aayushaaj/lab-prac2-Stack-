@@ -33,6 +33,10 @@
         return arr[index];
     }
 
+    bool ArrayStack::isFull() {
+        return (index >= MAX_SIZE - 1);
+    }
+
     void ArrayStack::printStack() {
         for (int i = 0; i <= index; i++) {
             std::cout << arr[i] << " ";
