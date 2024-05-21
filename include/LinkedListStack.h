@@ -12,7 +12,7 @@ public:
     int pop();
     int top();
     bool isEmpty();
-
+    bool isFull();
     void printStack();
     
  private :
