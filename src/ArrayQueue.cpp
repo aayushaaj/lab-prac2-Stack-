@@ -16,14 +16,14 @@ void ArrayQueue::enqueue(int item)
     }
     if (isEmpty())
     {
-        frontIndex = 0;
+        frontIndex = 0; // if queue is empty, frontIndex and rearIndex is 0
         rearIndex = 0;
     }
     else
     {
         rearIndex++;
     }
-    arr[rearIndex] = item;
+    arr[rearIndex] = item; // add item to the rear of the queue
 }
 
 int ArrayQueue::dequeue()
@@ -36,7 +36,7 @@ int ArrayQueue::dequeue()
     else
     {
         int dequeuedElement = arr[frontIndex];
-        if (frontIndex == rearIndex)
+        if (frontIndex == rearIndex) // if there is only one element in the queue
         {
             frontIndex = -1;
             rearIndex = -1;
