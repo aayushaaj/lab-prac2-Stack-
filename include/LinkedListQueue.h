@@ -5,7 +5,6 @@ class LinkedListQueue : public Queue
 {
     public:
         LinkedListQueue();
-        ~LinkedListQueue();
 
         void enqueue(int item);
         int dequeue();

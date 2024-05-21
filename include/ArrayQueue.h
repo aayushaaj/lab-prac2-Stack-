@@ -9,7 +9,6 @@ class ArrayQueue : public Queue
 
     public:
         ArrayQueue();
-        ~ArrayQueue();
 
         void enqueue(int item);
         int dequeue();
