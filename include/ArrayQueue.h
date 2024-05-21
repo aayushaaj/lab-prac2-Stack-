@@ -4,8 +4,9 @@
 class ArrayQueue : public Queue
 {
         int arr[MAX_SIZE];
-        int frontElement;
-        int rearElement;
+        int frontIndex;
+        int rearIndex;
+
     public:
         ArrayQueue();
         ~ArrayQueue();
@@ -14,6 +15,7 @@ class ArrayQueue : public Queue
         int dequeue();
         
         int front();
+        int rear();
         bool isEmpty();
         bool isFull();
         void printQueue();
