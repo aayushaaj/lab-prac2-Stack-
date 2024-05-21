@@ -3,12 +3,8 @@
 
 ArrayQueue::ArrayQueue()
 {
-    frontElement = -1;
-    rearElement = -1;
-}
-
-ArrayQueue::~ArrayQueue()
-{
+    frontIndex = -1;
+    rearIndex = -1;
 }
 
 void ArrayQueue::enqueue(int item)
@@ -20,10 +16,14 @@ void ArrayQueue::enqueue(int item)
     }
     if (isEmpty())
     {
-        frontElement = item;
+        frontIndex = 0;
+        rearIndex = 0;
     }
-    rearElement = item;
-    arr[++rearElement] = item;
+    else
+    {
+        rearIndex++;
+    }
+    arr[rearIndex] = item;
 }
 
 int ArrayQueue::dequeue()
@@ -35,8 +35,16 @@ int ArrayQueue::dequeue()
     }
     else
     {
-        int dequeuedElement = frontElement;
-        frontElement = arr[++frontElement];
+        int dequeuedElement = arr[frontIndex];
+        if (frontIndex == rearIndex)
+        {
+            frontIndex = -1;
+            rearIndex = -1;
+        }
+        else
+        {
+            frontIndex++;
+        }
         return dequeuedElement;
     }
 }
@@ -50,16 +58,48 @@ int ArrayQueue::front()
     }
     else
     {
-        return frontElement;
+        return arr[frontIndex];
+    }
+}
+
+int ArrayQueue::rear()
+{
+    if (isEmpty())
+    {
+        std::cout << "Queue is Empty" << std::endl;
+        return -1;
+    }
+    else
+    {
+        return arr[rearIndex];
     }
 }
 
 bool ArrayQueue::isEmpty()
 {
-    return (frontElement == -1);
+    return (frontIndex == -1);
 }
 
 bool ArrayQueue::isFull()
 {
-    return (rearElement == MAX_SIZE - 1);
+    return (rearIndex >= MAX_SIZE - 1);
+}
+
+void ArrayQueue::printQueue()
+{
+    if(isEmpty())
+    {
+        std::cout << "Queue is Empty" << std::endl;
+        return;
+    }
+    else{
+    for (int i = frontIndex; i <= rearIndex; i++)
+    {
+        std::cout << arr[i] << " ";
+    }
+    std::cout << std::endl;
+    }
+}
+ArrayQueue::~ArrayQueue()
+{
 }

@@ -29,10 +29,7 @@ int LinkedListStack::pop()
         } 
         return removed ? poppedElement : -1;
     }
-        }
-
-            
-    
+        } 
 
 int LinkedListStack::top()
     {
@@ -49,6 +46,11 @@ int LinkedListStack::top()
 bool LinkedListStack::isEmpty()
     {
         return list.isEmpty();
+    }
+
+bool LinkedListStack::isFull()
+    {
+        return false; // linked list can never be full
     }
 
 void LinkedListStack::printStack()
