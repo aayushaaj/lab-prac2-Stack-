@@ -100,6 +100,3 @@ void ArrayQueue::printQueue()
     std::cout << std::endl;
     }
 }
-ArrayQueue::~ArrayQueue()
-{
-}

@@ -8,7 +8,14 @@ LinkedListQueue::LinkedListQueue()
 }
 
 void LinkedListQueue::enqueue(int item)
-{
+{   if(isEmpty())
+    {
+        frontElement = item; // if queue is empty, frontElement and rearElement is the item
+    }
+    else
+    {
+        rearElement = item; // if queue is not empty, rearElement is the item
+    }
     list.addToTail(item);
 }
 
@@ -35,7 +42,7 @@ int LinkedListQueue::front()
     }
     else
     {
-        return list.getHead();
+        return list.getHead(); // return the head of the list
     }
 }
 
@@ -47,7 +54,7 @@ int LinkedListQueue::rear()
     }
     else
     {
-        return rearElement;
+        return rearElement; // return the rearElement
     }
 }
 
@@ -58,7 +65,7 @@ bool LinkedListQueue::isEmpty()
 
 bool LinkedListQueue::isFull()
 {
-    return false;
+    return false; // linked list cannot be full
 }
 
 void LinkedListQueue::printQueue()
